@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homely Treasures — Homemade Masalas & Decor</title>
+  <meta name="description" content="Homely Treasures: Homemade masalas, elegant pillow covers, yoga mats, and dinner table mats." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-ink:#1f2937;
+      --brand-warm:#8b5e34;
+      --brand-soft:#f6efe7;
+      --accent:#2f855a;
+      --bg:#fffdf8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--brand-ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.3) blur(6px);
+      background:rgba(255,253,248,0.9);
+      border-bottom:1px solid #e9e2d8;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      max-width:1100px; margin:0 auto; padding:12px 20px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none; color:var(--brand-ink);
+    }
+    .logo{
+      width:36px; height:36px; border-radius:8px;
+      background:linear-gradient(135deg, var(--brand-warm), #d9a86c);
+      box-shadow:0 2px 8px rgba(139,94,52,0.25);
+    }
+    .brand-name{font-family:Marcellus, serif; font-size:20px; letter-spacing:0.4px}
+    .menu{display:flex; gap:18px; flex-wrap:wrap}
+    .menu a{
+      color:var(--brand-ink); text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px;
+    }
+    .menu a:hover{background:#f3ede4}
+    .cta-btn{
+      background:var(--accent); color:white; text-decoration:none; padding:8px 14px; border-radius:10px; font-weight:700;
+      box-shadow:0 2px 8px rgba(47,133,90,0.25);
+    }
+    .cta-btn:hover{opacity:0.9}
+    .hero{
+      display:grid; grid-template-columns:1.2fr 1fr; gap:24px;
+      max-width:1100px; margin:0 auto; padding:40px 20px 24px;
+    }
+    .hero-card{
+      background:var(--brand-soft);
+      border:1px solid #e9e2d8; border-radius:16px; padding:28px;
+    }
+    .hero h1{font-family:Marcellus, serif; font-size:40px; margin:0 0 10px}
+    .hero p{margin:0 0 18px}
+    .badges{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+    .badge{
+      font-size:13px; background:white; border:1px solid #e9e2d8; border-radius:999px; padding:6px 10px;
+    }
+    .hero-img{
+      border-radius:16px; overflow:hidden; border:1px solid #e9e2d8;
+      background:#fff;
+      display:grid; place-items:center; padding:12px;
+    }
+    .hero-img img{width:100%; height:auto; border-radius:12px}
+    .section{
+      max-width:1100px; margin:0 auto; padding:32px 20px;
+    }
+    .section h2{font-family:Marcellus, serif; font-size:28px; margin:0 0 8px}
+    .section p{margin:0 0 18px}
+    .grid{
+      display:grid; grid-template-columns:repeat(4, 1fr); gap:18px;
+    }
+    @media (max-width:980px){ .grid{grid-template-columns:repeat(2, 1fr)} .hero{grid-template-columns:1fr}}
+    @media (max-width:540px){ .grid{grid-template-columns:1fr} .hero h1{font-size:32px}}
+    .card{
+      background:white; border:1px solid #e9e2d8; border-radius:14px;
+      display:flex; flex-direction:column; overflow:hidden;
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,0.06)}
+    .card img{width:100%; height:180px; object-fit:cover}
+    .card-body{padding:14px}
+    .card-title{font-weight:700; margin:0 0 6px}
+    .price{color:var(--accent); font-weight:700}
+    .pill{
+      display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid #e9e2d8; margin-right:6px; background:#f9f6f1;
+    }
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .contact{
+      background:var(--brand-soft); border:1px solid #e9e2d8; border-radius:14px; padding:18px;
+    }
+    input, textarea, select{
+      width:100%; padding:10px 12px; border:1px solid #d8cfc3; border-radius:10px; background:white; font:inherit;
+    }
+    label{font-weight:600; font-size:14px}
+    .row{display:grid; gap:12px; margin-bottom:12px}
+    .row-2{grid-template-columns:1fr 1fr}
+    footer{
+      border-top:1px solid #e9e2d8; margin-top:24px; padding:18px 20px; text-align:center; color:#6b7280;
+    }
+    .note{font-size:13px; color:#6b7280}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Homely Treasures home">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-name">Homely Treasures</span>
+      </a>
+      <div class="menu" role="navigation" aria-label="Primary">
+        <a href="#masalas">Masalas</a>
+        <a href="#pillows">Pillow covers</a>
+        <a href="#yoga">Yoga mats</a>
+        <a href="#dinner">Dinner table mats</a>
+        <a class="cta-btn" href="#contact">Enquire</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Warm, homemade goodness for your kitchen and home</h1>
+        <p>Discover finely ground, preservative-free masalas, elegant pillow covers, supportive yoga mats, and durable dinner table mats — curated for daily comfort and lasting quality.</p>
+        <div class="badges">
+          <span class="badge">Small-batch</span>
+          <span class="badge">Handpicked materials</span>
+          <span class="badge">Pan-India shipping</span>
+          <span class="badge">Bulk & custom orders</span>
+        </div>
+      </div>
+      <div class="hero-img" aria-label="Featured product image">
+        <img src="https://images.unsplash.com/photo-1610541138526-a8f67df495c0?q=80&w=1200&auto=format&fit=crop" alt="Assortment of spices and herbs in bowls" />
+      </div>
+    </section>
+
+    <section id="masalas" class="section">
+      <h2>Homemade masalas</h2>
+      <p>Small-batch, aroma-rich blends. No preservatives, just authentic flavor. Perfect for daily cooking and gifting.</p>
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1589308078050-0a5329da9c19?q=80&w=1200&auto=format&fit=crop" alt="Red chili powder in a bowl" />
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1615485737657-2e20fc212d8b?q=80&w=1200&auto=format&fit=crop" alt="Turmeric powder with root" />
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1620110062682-364642f96f59?q=80&w=1200&auto=format&fit=crop" alt="Masala blend in jars" />
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1596568353953-6d7e2711b8d1?q=80&w=1200&auto=format&fit=crop" alt="Whole spices on a plate" />
+        </article>
+      </div>
+
+      <div class="section" style="padding:18px 0 0;">
+        <div class="grid">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1200&auto=format&fit=crop" alt="Garam masala jar" />
+            <div class="card-body">
+              <div class="card-title">Garam Masala — 200g</div>
+              <div class="pill">Preservative-free</div><div class="pill">Stone-ground</div>
+              <p class="price">₹219</p>
+              <p class="note">Warm, balanced blend. Ideal for curries, gravies, and marinades.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1568583573725-65982f2b239c?q=80&w=1200&auto=format&fit=crop" alt="Turmeric powder" />
+            <div class="card-body">
+              <div class="card-title">Haldi — 250g</div>
+              <div class="pill">Single-origin</div><div class="pill">High-curcumin</div>
+              <p class="price">₹189</p>
+              <p class="note">Golden color and deep aroma for daily cooking and health drinks.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1607438054036-82bb70ad7962?q=80&w=1200&auto=format&fit=crop" alt="Chili powder" />
+            <div class="card-body">
+              <div class="card-title">Mirchi Powder — 200g</div>
+              <div class="pill">Medium heat</div><div class="pill">Sun-dried</div>
+              <p class="price">₹159</p>
+              <p class="note">Bold color, clean heat. Perfect for tadkas and stir-fries.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908171262-c1c491a3ad37?q=80&w=1200&auto=format&fit=crop" alt="Coriander cumin blend" />
+            <div class="card-body">
+              <div class="card-title">Dhania-Jeera — 200g</div>
+              <div class="pill">Balanced</div><div class="pill">Daily use</div>
+              <p class="price">₹169</p>
+              <p class="note">Earthy and aromatic for vegetables, dals, and snacks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pillows" class="section">
+      <h2>Pillow covers</h2>
+      <p>Elegant, easy-care fabrics that lift your space. Multiple sizes and sets available for bedrooms and living rooms.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Neutral pillow cover" />
+          <div class="card-body">
+            <div class="card-title">Classic Neutrals (16x16) — Set of 2</div>
+            <div class="pill">Machine-washable</div><div class="pill">Soft weave</div>
+            <p class="price">₹399</p>
+            <p class="note">Minimal and cozy, pairs well with any decor.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1590637737569-f90c1a3b7b6a?q=80&w=1200&auto=format&fit=crop" alt="Patterned pillow cover" />
+          <div class="card-body">
+            <div class="card-title">Artisanal Pattern (18x18) — Set of 2</div>
+            <div class="pill">Colorfast</div><div class="pill">Hidden zipper</div>
+            <p class="price">₹549</p>
+            <p class="note">Statement piece with subtle texture and clean finish.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1556742043-3c52d6e88c62?q=80&w=1200&auto=format&fit=crop" alt="Textured pillow cover" />
+          <div class="card-body">
+            <div class="card-title">Textured Weave (20x20) — Single</div>
+            <div class="pill">Premium fabric</div><div class="pill">Handmade</div>
+            <p class="price">₹349</p>
+            <p class="note">A soft, durable option for everyday lounging.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1543955447-289868d9292f?q=80&w=1200&auto=format&fit=crop" alt="Colorful pillow cover set" />
+          <div class="card-body">
+            <div class="card-title">Color Pop (16x16) — Set of 4</div>
+            <div class="pill">Vibrant</div><div class="pill">Easy-zip</div>
+            <p class="price">₹899</p>
+            <p class="note">Brighten corners with playful hues and smooth finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="yoga" class="section">
+      <h2>Yoga mats</h2>
+      <p>Supportive, non-slip mats for daily practice. Choose thickness and texture that suits your flow.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1549050332-5930b5e58b5a?q=80&w=1200&auto=format&fit=crop" alt="Yoga mat rolled" />
+          <div class="card-body">
+            <div class="card-title">Comfort Mat — 6mm</div>
+            <div class="pill">Non-slip</div><div class="pill">Sweat-resistant</div>
+            <p class="price">₹799</p>
+            <p class="note">Balanced cushioning for stretches and holds.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1588286840138-1b6593e78e2e?q=80&w=1200&auto=format&fit=crop" alt="Yoga mat on floor" />
+          <div class="card-body">
+            <div class="card-title">Flow Mat — 8mm</div>
+            <div class="pill">Extra support</div><div class="pill">Textured grip</div>
+            <p class="price">₹999</p>
+            <p class="note">Great for joint comfort and longer sessions.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1596357395137-5b8e1e2e8303?q=80&w=1200&auto=format&fit=crop" alt="Eco yoga mat" />
+          <div class="card-body">
+            <div class="card-title">Eco Mat — 5mm</div>
+            <div class="pill">PVC-free</div><div class="pill">Odor-free</div>
+            <p class="price">₹1,199</p>
+            <p class="note">Lightweight and kind to the environment.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600093462284-07c6c97d71d5?q=80&w=1200&auto=format&fit=crop" alt="Printed yoga mat" />
+          <div class="card-body">
+            <div class="card-title">Printed Mat — 6mm</div>
+            <div class="pill">Custom prints</div><div class="pill">Durable</div>
+            <p class="price">₹1,099</p>
+            <p class="note">Personalize with your design or choose from our patterns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dinner" class="section">
+      <h2>Dinner table mats</h2>
+      <p>Easy-clean, heat-resistant mats to elevate daily meals. Mix and match textures for your dining setup.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1526429351191-87c2c71fd2f1?q=80&w=1200&auto=format&fit=crop" alt="Woven table mat set" />
+          <div class="card-body">
+            <div class="card-title">Woven Set — 6 pcs</div>
+            <div class="pill">Heat-resistant</div><div class="pill">Wipe-clean</div>
+            <p class="price">₹649</p>
+            <p class="note">Subtle weave adds texture and warmth to the table.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=1200&auto=format&fit=crop" alt="Printed table mat" />
+          <div class="card-body">
+            <div class="card-title">Printed Set — 6 pcs</div>
+            <div class="pill">Colorfast</div><div class="pill">Anti-slip</div>
+            <p class="price">₹699</p>
+            <p class="note">Bold patterns for festive dinners and family meals.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1476222670681-6c8b0b972cd9?q=80&w=1200&auto=format&fit=crop" alt="Neutral table mats" />
+          <div class="card-body">
+            <div class="card-title">Minimal Neutrals — 6 pcs</div>
+            <div class="pill">Stain-resistant</div><div class="pill">Lightweight</div>
+            <p class="price">₹599</p>
+            <p class="note">Calm tones to pair with any dinnerware set.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1596755094514-c5f66ca2b2b5?q=80&w=1200&auto=format&fit=crop" alt="Natural fiber mats" />
+          <div class="card-body">
+            <div class="card-title">Natural Fiber — 4 pcs</div>
+            <div class="pill">Handmade</div><div class="pill">Durable</div>
+            <p class="price">₹549</p>
+            <p class="note">Rustic charm with sturdy build for daily use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Enquiries and bulk orders</h2>
+      <p>Tell us what you need — sizes, quantities, and delivery location. We’ll reply with stock, pricing, and timelines.</p>
+      <div class="split">
+        <form class="contact" onsubmit="submitForm(event)">
+          <div class="row row-2">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="Your number" required />
+            </div>
+          </div>
+          <div class="row">
+            <label for="email">Email (optional)</label>
+            <input id="email" name="email" placeholder="your@email.com" />
+          </div>
+          <div class="row">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option>Homemade Masalas</option>
+              <option>Pillow Covers</option>
+              <option>Yoga Mats</option>
+              <option>Dinner Table Mats</option>
+              <option>Mixed / Bulk</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="message">Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Sizes, quantities, colors, delivery city…"></textarea>
+          </div>
+          <button class="cta-btn" type="submit">Send enquiry</button>
+          <p id="formStatus" class="note" role="status" style="margin-top:8px;"></p>
+        </form>
+
+        <div>
+          <div class="card" style="height:100%">
+            <div class="card-body">
+              <div class="card-title">Why choose Homely Treasures?</div>
+              <p><span class="pill">Quality-first</span> <span class="pill">Fair pricing</span> <span class="pill">Reliable delivery</span></p>
+              <ul>
+                <li><strong>Fresh blends:</strong> Made in small batches for peak aroma.</li>
+                <li><strong>Durable fabrics:</strong> Colorfast, easy-care, and comfortable.</li>
+                <li><strong>Customization:</strong> Prints, sizes, and sets tailored to you.</li>
+                <li><strong>Bulk-friendly:</strong> Corporate gifts and event orders welcomed.</li>
+              </ul>
+              <p class="note">Based near railway and courier hubs for efficient dispatch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Homely Treasures — Crafted with care. Pan-India shipping available.
+  </footer>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Thanks! Your enquiry has been recorded. We will contact you shortly.';
+      // To connect to email or WhatsApp:
+      // - Replace this with a fetch() to your backend or a mail service (Formspree/EmailJS).
+      // - Or open WhatsApp with prefilled text:
+      //   const txt = encodeURIComponent(
+      //     'New Enquiry:\\nName: ' + document.getElementById('name').value +
+      //     '\\nPhone: ' + document.getElementById('phone').value +
+      //     '\\nCategory: ' + document.getElementById('category').value +
+      //     '\\nDetails: ' + document.getElementById('message').value
+      //   );
+      //   window.open('https://wa.me/91XXXXXXXXXX?text=' + txt, '_blank');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
